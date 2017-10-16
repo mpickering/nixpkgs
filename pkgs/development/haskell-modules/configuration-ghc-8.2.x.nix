@@ -78,4 +78,6 @@ self: super: {
   aeson-compat = dontCheck super.aeson-compat_0_3_7_1;  # test suite needs QuickCheck 2.10.*
   binary-orphans = dontCheck super.binary-orphans_0_1_8_0; # test suite needs QuickCheck 2.10.*
 
+  temporary = dontCheck super.temporary;
+
 }
