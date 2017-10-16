@@ -49,7 +49,9 @@ self: super: {
   Dust-crypto = dontCheck super.Dust-crypto;
   hasql-postgres = dontCheck super.hasql-postgres;
   hspec = super.hspec.override { stringbuilder = dontCheck super.stringbuilder; };
-  hspec-core = super.hspec-core.override { silently = dontCheck super.silently; temporary = dontCheck super.temporary; };
+  hspec-core = dontCheck (super.hspec-core.override { silently = dontCheck super.silently; temporary = dontCheck super.temporary; });
+
+  temporary = dontCheck super.temporary;
   hspec-expectations = dontCheck super.hspec-expectations;
   HTTP = dontCheck super.HTTP;
   http-streams = dontCheck super.http-streams;
