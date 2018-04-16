@@ -35,6 +35,7 @@ stdenv.mkDerivation {
     "--with-mysql-libs=${mysql.connector-c}/lib/mysql"
     "--with-blas"
     "--with-liblas=${libLAS}/bin/liblas-config"
+    "--with-gdal=${gdal}/bin/gdal-config"
   ];
 
   # Otherwise a very confusing "Can't load GDAL library" error
