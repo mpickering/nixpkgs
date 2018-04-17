@@ -19286,7 +19286,9 @@ with pkgs;
 
   rocksndiamonds = callPackage ../games/rocksndiamonds { };
 
-  saga = callPackage ../applications/gis/saga { };
+  saga = callPackage ../applications/gis/saga {
+    inherit (darwin.apple_sdk.frameworks) Cocoa;
+  };
 
   samplv1 = callPackage ../applications/audio/samplv1 { };
 
