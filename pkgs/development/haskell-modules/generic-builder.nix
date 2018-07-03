@@ -179,8 +179,7 @@ let
   allPkgconfigDepends = pkgconfigDepends ++ libraryPkgconfigDepends ++ executablePkgconfigDepends ++
                         optionals doCheck testPkgconfigDepends ++ optionals doBenchmark benchmarkPkgconfigDepends;
 
-  depsBuildBuild = [ nativeGhc ];
-  nativeBuildInputs = [ ghc removeReferencesTo ] ++ optional (allPkgconfigDepends != []) pkgconfig ++
+  nativeBuildInputs = [ ghc nativeGhc removeReferencesTo ] ++ optional (allPkgconfigDepends != []) pkgconfig ++
                       setupHaskellDepends ++
                       buildTools ++ libraryToolDepends ++ executableToolDepends;
   propagatedBuildInputs = buildDepends ++ libraryHaskellDepends ++ executableHaskellDepends ++ libraryFrameworkDepends;
@@ -231,7 +230,7 @@ stdenv.mkDerivation ({
 
   inherit src;
 
-  inherit depsBuildBuild nativeBuildInputs;
+  inherit nativeBuildInputs;
   buildInputs = otherBuildInputs ++ optionals (!hasActiveLibrary) propagatedBuildInputs;
   propagatedBuildInputs = optionals hasActiveLibrary propagatedBuildInputs;
 
