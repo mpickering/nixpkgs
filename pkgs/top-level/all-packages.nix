@@ -8319,6 +8319,8 @@ with pkgs;
 
   kythe = callPackage ../development/tools/kythe { };
 
+  kythe-src = callPackage ../development/tools/kythe/src.nix { };
+
   Literate = callPackage ../development/tools/literate-programming/Literate {};
 
   lcov = callPackage ../development/tools/analysis/lcov { };

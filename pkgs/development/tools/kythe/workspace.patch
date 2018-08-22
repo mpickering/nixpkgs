@@ -1,0 +1,13 @@
+diff --git a/WORKSPACE b/WORKSPACE
+index 8302d53..86584b9 100644
+--- a/WORKSPACE
++++ b/WORKSPACE
+@@ -292,7 +292,7 @@ load("@io_bazel_rules_go//go:def.bzl", "go_register_toolchains", "go_rules_depen
+ 
+ go_rules_dependencies()
+ 
+-go_register_toolchains()
++go_register_toolchains(go_version = "host")
+ 
+ # Go imports are managed by Gazelle:
+ # https://github.com/bazelbuild/bazel-gazelle.  Use the
