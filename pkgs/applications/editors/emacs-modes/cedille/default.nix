@@ -15,6 +15,9 @@ stdenv.mkDerivation rec {
     install se-mode/*.el se-mode/*.elc $out/share/emacs/site-lisp
     install cedille-mode/*.el cedille-mode/*.elc $out/share/emacs/site-lisp
     install *.el *.elc $out/share/emacs/site-lisp
+    substitute $out/share/emacs/site-lisp/cedille-mode.el $out/share/emacs/site-lisp/cedille-mode.el \
+      --replace /usr/bin/cedille ${cedille}/bin/cedille \
+
   '';
 
   meta = {
