@@ -1,7 +1,5 @@
 { stdenv, fetchFromGitHub, alex, happy, Agda, agdaIowaStdlib,
   glibcLocales, ghcWithPackages }:
-let
-in
 stdenv.mkDerivation rec {
   version = "1.0.0";
   name = "cedille-${version}";
