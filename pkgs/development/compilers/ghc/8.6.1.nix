@@ -90,11 +90,21 @@ stdenv.mkDerivation (rec {
 
   outputs = [ "out" "doc" ];
 
-  patches = [(fetchpatch rec { # https://phabricator.haskell.org/D5123
+  patches = [
+  (fetchpatch rec { # https://phabricator.haskell.org/D5123
     url = "http://tarballs.nixos.org/sha256/${sha256}";
     name = "D5123.diff";
     sha256 = "0nhqwdamf2y4gbwqxcgjxs0kqx23w9gv5kj0zv6450dq19rji82n";
-  })];
+})
+
+  (fetchpatch rec { # https://phabricator.haskell.org/D5123
+    url = "https://github.com/mpickering/ghc/commit/e11aebfea0cda8a7989389e56e421b3fa48452c7.patch";
+    name = "safer-haskel.patch";
+    sha256 = "1vlvx4v5zj0m8r8sby6my8dbadcjzmilsxsh239p45rh70vzh3v3";
+})
+
+
+  ];
 
   postPatch = "patchShebangs .";
 
