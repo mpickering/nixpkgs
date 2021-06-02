@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
 
   meta = with lib; {
     description = "A visualisation tool for the creation and analysis of graphs.";
-    homepage = "https://graphia.org";
+    homepage = "https://graphia.app";
     license = licenses.gpl3Only;
     maintainers = [ maintainers.bgamari ];
     platforms = platforms.all;
