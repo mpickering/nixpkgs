@@ -2,7 +2,7 @@
 
 buildGoPackage rec {
   pname = "gitlab-ci-pipelines-exporter";
-  version = "0.2.5";
+  version = "0.4.9";
 
   goPackagePath = "github.com/mvisonneau/gitlab-ci-pipelines-exporter";
 
@@ -11,8 +11,8 @@ buildGoPackage rec {
   src = fetchFromGitHub {
     owner = "mvisonneau";
     repo = pname;
-    rev = version;
-    sha256 = "0qmy6pqfhx9bphgh1zqi68kp0nscwy1x7z13lfiaaz8pgsjh95yy";
+    rev = "v${version}";
+    sha256 = "13zs8140n4z56i0xkl6jvvmwy80l07dxyb23wxzd5avbdm8knypz";
   };
 
   doCheck = true;
